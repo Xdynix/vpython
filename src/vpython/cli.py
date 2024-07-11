@@ -3,11 +3,11 @@ import sys
 from pathlib import Path
 
 VENV_NAMES = [
-    'venv',
-    '.venv',
+    "venv",
+    ".venv",
 ]
-IS_WIN = sys.platform == 'win32'
-BIN = 'Scripts' if IS_WIN else 'bin'
+IS_WIN = sys.platform == "win32"
+BIN = "Scripts" if IS_WIN else "bin"
 
 
 def main():
@@ -23,8 +23,12 @@ def main():
         ),
         python,
     )
-    subprocess.run([executable, target, *sys.argv[2:]], check=True, cwd=root)
+    subprocess.run(  # noqa: S603
+        [executable, target, *sys.argv[2:]],
+        check=True,
+        cwd=root,
+    )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
