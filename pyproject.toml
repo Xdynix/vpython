@@ -10,7 +10,7 @@ requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
 [project.scripts]
-vpython = "vpython.cli:main"
+vpython = "vpython:main"
 
 [tool.pdm]
 distribution = true
